@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ Web Compiler</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="https://i.ibb.co/TvpPjbS/Logo.png" type="image/png">
+</head>
+<!-- CodeMirror CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.12/codemirror.min.css">
+<!-- CodeMirror Theme -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.12/theme/dracula.min.css">
+
+<body>
+    <div class="container">
+        <h1>C++ Web Compiler</h1>
+        <textarea id="code">//C++ compiler by Samvel Aleksanyan and Samvel Harutunyan. Order individual code here @StarList_saki0 (telegram).
+#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    // your code goes here
+    return 0;
+}</textarea>
+        <textarea id="input" placeholder="Input (optional)"></textarea>
+        <button onclick="compileCode()">Run</button>
+        <div class="output-header">Output:</div>
+        <pre id="output"></pre>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.12/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.12/mode/clike/clike.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.12/addon/edit/closebrackets.min.js"></script>
+    <script>
+        const editor = CodeMirror.fromTextArea(document.getElementById('code'), {
+            mode: 'text/x-c++src',        // Set to C++ mode
+            lineNumbers: true,            // Show line numbers
+            tabSize: 4,                   // Set the width of a tab character
+            indentUnit: 4,                // Controls the number of spaces/tabs per indent level
+            indentWithTabs: true,         // Indent using actual tab characters, not spaces
+            autoCloseBrackets: true,      // Enable auto-close brackets
+            matchBrackets: true,          // Highlight matching brackets
+        });
+
+    </script>
+
+    <script src="scripts.js"></script>
+
+</body>
+
+</html>
